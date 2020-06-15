@@ -20,13 +20,13 @@
       padding: 0px 40px;
       margin-top: 35px;
     }
-    .header-list__leftbox__member-list {
+    &__member-list {
       color :#999999;
       font-size :12px;
       padding: 0px 40px;
       display: flex;
       margin-top: 15px;
-      .header-list__leftbox__member-list__member {
+      &__member {
       }
     }
   }
@@ -49,25 +49,25 @@
 }
 
 
-.chat-main__message-list {
+.main {
   background-color: #fafafa;
   height: calc(100vh - 190px);
 
-  .message-list {
+  &__message-list {
     padding-left: 40px;
     padding-top: 35px;
     display: flex;
   }
-    .message-list__name {
+    &__name {
       font-size: 16px;
       color: #333333;
       font-weight: bold;
     }
-    .message-list__date {
+    &__date {
       color: #999999;
       font-size: 12px;
     }
-    .message-list__text {
+    &__text {
       font-size: 14px;
       color: #434A54;
       padding-left: 40px;
