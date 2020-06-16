@@ -57,7 +57,7 @@
     padding-left: 40px;
     padding-top: 35px;
     display: flex;
-  }
+
     &__name {
       font-size: 16px;
       color: #333333;
@@ -66,14 +66,16 @@
     &__date {
       color: #999999;
       font-size: 12px;
+      margin-left: 10px;
     }
-    &__text {
-      font-size: 14px;
-      color: #434A54;
-      padding-left: 40px;
-      margin-top: 12px;
-      margin-bottom: 46px;
-    }
+  }
+  &__message-list__text {
+    font-size: 14px;
+    color: #434A54;
+    margin-left: 40px;
+    margin-top: 12px;
+    margin-bottom: 46px;
+  }
 }
 
 .chat-main__message-form {
