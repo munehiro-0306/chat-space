@@ -4,15 +4,22 @@
       %p.side-header__box__username
         なかむら
       %ul.side-header__box__menu
+<<<<<<< Updated upstream
         %li.side-header__box__edit-user
           = link_to new_group_path do
             = icon('fas','edit')
+=======
+>>>>>>> Stashed changes
         %li.side-header__box__new__group
+          = link_to new_group_path do
+            = icon('fas','edit')
+        %li.side-header__box__edit__user
           = link_to "#" do
             = icon('fas','cog')
   .groups
-    =link_to "#",class: "group" do
-      %p.group__group-name
-        test
-      %P.group__latest-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      =link_to "#",class: "group" do
+        %p.group__group-name
+          test
+        %P.group__latest-message
+          まだメッセージがありません
