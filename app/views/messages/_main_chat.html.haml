@@ -2,27 +2,23 @@
   .header-list
     .header-list__leftbox
       %p.header-list__leftbox__current-group
-        div
+        =@group.name
       %ul.header-list__leftbox__member-list
         Member :
         %li.header-list__leftbox__member-list__member
-          なかむら
-    =link_to "#" do
+          - @group.users.each do |user|
+            =user.name
+    =link_to edit_group_path(@group) do
       .header-list__edit-btn
         Edit
   .main
-    .main__message-list
-      %p.main__message-list__name
-        なかむら
-      %p.main__message-list__date
-        2020/06/15(Mon) 16:16:53
-    .main__message-list__text
-      おはよう
+    = render @messages
   .chat-main__message-form
-    %form.new-message
-      .input-box
-        %input{type: "text",class: "input-box__text",placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file",class: "input-box__image__file"}
-      %input{type: "submit",class: "submit-btn"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'form__image')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
+

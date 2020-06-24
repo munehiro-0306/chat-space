@@ -1,0 +1,9 @@
+.main__message-list
+  %p.main__message-list__name
+    = message.user.name
+  %p.main__message-list__date
+    = message.created_at
+.main__message-list__text
+  - if message.content.present?
+    = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
